@@ -1,0 +1,157 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.balloons {
+    position: relative;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 60px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.balloon.one {
+    left: 30%;
+    background-color: #ff7f50;
+    animation-delay: 0s;
+}
+
+.balloon.two {
+    left: 50%;
+    background-color: #87cefa;
+    animation-delay: 1s;
+}
+
+.balloon.three {
+    left: 70%;
+    background-color: #32cd32;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+#personalMessage {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.game {
+    margin-top: 30px;
+}
+
+#gameArea {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #f0f8ff;
+    border: 2px solid #ff69b4;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#scoreBoard {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.falling-balloon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: fall 3s linear infinite; /* Increased speed for difficulty */
+}
+
+@keyframes fall {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 400px;
+    }
+}
+
+#victoryScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#victoryScreen img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
